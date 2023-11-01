@@ -6,14 +6,11 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 16:28:42 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/01 16:42:49 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:50:31 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-   if (c >= 0 && c <= 127)
-		return (1);
-	else
-		return (0);
+	return (c >= 0 && c <= 127);
 }
