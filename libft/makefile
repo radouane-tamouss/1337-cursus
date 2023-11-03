@@ -8,7 +8,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_$(F).c ft_$(F).test.c
 OBJS = $(SRCS:.c=.o)
-F = s
+F := s
 NAME = libft.a
 
 all: $(NAME)
