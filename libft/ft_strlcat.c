@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:42:55 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/03 23:54:53 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/04 00:21:25 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,13 @@ int	main(void)
 {
 	char src[] = "world";
 	char dst[20] = "hello, ";
+	
 
 	printf ("return = %zu , src = %s, dst = %s\n", ft_strlcat(dst,src,17),src,dst);
-	printf ("\nreturn = %zu , src = %s, dst = %s", strlcat(dst,src,17),src,dst);
+	
+
+	char src1[] = "world";
+	char dst1[20] = "hello, ";
+	printf ("\nreturn = %zu , src = %s, dst = %s", strlcat(dst1,src1,17),src,dst);
 	return (0);
 }
