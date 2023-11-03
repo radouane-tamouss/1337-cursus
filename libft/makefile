@@ -6,9 +6,9 @@ push:
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = *.c
+SRCS = ft_$(F).c ft_$(F).test.c
 OBJS = $(SRCS:.c=.o)
-
+F = s
 NAME = libft.a
 
 all: $(NAME)
