@@ -1,20 +1,14 @@
-push:
-	git add .
-	git commit -m 'hello'
-	git push
-
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-
+F := strlen
 SRCS = ft_$(F).c ft_$(F).test.c
 OBJS = $(SRCS:.c=.o)
-F := s
 NAME = libft.a
 
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-	ar $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 
 %.o : %.c
@@ -27,3 +21,9 @@ fclean : clean
 	rm -rf $(NAME)
 
 re: fclean all
+
+push:
+	cd ..
+	git add .
+	git commit -m 'push'
+	git push
