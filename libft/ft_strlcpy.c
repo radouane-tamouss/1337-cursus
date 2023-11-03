@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 16:19:14 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/03 17:56:58 by rtamouss         ###   ########.fr       */
+/*   Created: 2023/11/03 18:01:32 by rtamouss          #+#    #+#             */
+/*   Updated: 2023/11/03 22:20:50 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, size_t n)
+size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
 {
-	int	i;
+	size_t	i;
+	size_t	len;
 
+	len = 0;
 	i = 0;
-	while (i < n && (s1[i] || s2[i]))
+	while (src[len])
+		len++;
+	if (dstsize == 0)
+		return (len);
+	while (i < dstsize - 1 && src[i])
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		dst[i] = src[i];
 		i++;
 	}
-	return (0);
+	dst[i] = '\0';
+	return (len);
 }
 
 // #include <stdio.h>
-// #include <stdlib.h>
 // #include <string.h>
-// int	main(void)
+
+// int main(void)
 // {
-// 	char *s1 = "hello world";
-// 	char *s2 = "hello world";
-// 	printf("%d", ft_strncmp(s1,s2,20));
-// 	printf("\n%d\n", strncmp(s1,s2,20));
+// 	char src[] = "hello world";
+// 	char dst[] = "hello";
+
+// 	printf("len = %zu , dst = %s, src = %s", ft_strlcpy(dst,src,0), dst, src);
+// 	printf("\nlen = %zu , dst = %s, src = %s", strlcpy(dst,src,0), dst, src);
 // 	return (0);
 // }

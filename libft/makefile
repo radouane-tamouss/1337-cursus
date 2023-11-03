@@ -1,4 +1,4 @@
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 F := strlen
 SRCS = ft_$(F).c ft_$(F).test.c
