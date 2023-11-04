@@ -1,7 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-F := strlen
-SRCS = ft_$(F).c ft_$(F).test.c
+# F := strlen
+SRCS = ft_bzero.c ft_memset.c
 OBJS = $(SRCS:.c=.o)
 NAME = libft.a
 
