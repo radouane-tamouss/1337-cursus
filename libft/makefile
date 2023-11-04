@@ -25,5 +25,5 @@ re: fclean all
 push:
 	cd ..
 	git add .
-	git commit -m 'push'
+	git commit -m 'push o ssf'
 	git push
