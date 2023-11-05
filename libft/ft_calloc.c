@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:50:51 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/05 02:52:42 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/05 14:53:37 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,16 @@ void	*ft_calloc(size_t count, size_t size)
 }
 
 // #include <stdio.h>
-// #include <stdlib.h>
-// // Your ft_calloc function here
-// int main() {
-// 	size_t	count = 5;
-// 	size_t	size = sizeof(int);
-// 	int*	array = (int*)ft_calloc(count, size);
-// 	if (array == NULL)
+
+// int	main(void)
+// {
+// 	int	*h;
+// 	h = ft_calloc(5, sizeof(int));
+// 	int i = 0;
+// 	while ( i < 5 )
 // 	{
-// 		return 1;
+// 		printf("h[%d] = %d \n", i, h[i]);
+// 		i++;
 // 	}
-// 	for (size_t i = 0; i < count; i++)
-// 	{
-// 		printf("array[%zu] = %d\n", i, array[i]);
-// 	}
-// 	free(array);
 // 	return 0;
 // }
