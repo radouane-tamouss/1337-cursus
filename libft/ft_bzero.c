@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 20:59:51 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/04 21:40:26 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/05 00:16:12 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ void	ft_bzero(void *s, size_t n)
 	ft_memset(s, c, n);
 }
 
-#include <stdio.h>
-#include <string.h>
-int main(void)
-{
-	char h[5] = "hello";
+// #include <stdio.h>
+// #include <string.h>
+// int main(void)
+// {
+// 	char h[5] = "hello";
 
-	ft_bzero(h,sizeof(h));
-	size_t i = 0;
-	while (i < sizeof(h))
-	{
-		printf("|%x|",h[i]);
-		i++;
-	}
-}
+// 	ft_bzero(h,sizeof(h));
+// 	size_t i = 0;
+// 	while (i < sizeof(h))
+// 	{
+// 		printf("|%x|",h[i]);
+// 		i++;
+// 	}
+// }

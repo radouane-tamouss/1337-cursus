@@ -6,21 +6,11 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:42:55 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/04 00:39:01 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/05 02:41:57 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 size_t	ft_strlcat(char *dst, char *src, size_t dstsize)
 {
@@ -48,12 +38,12 @@ size_t	ft_strlcat(char *dst, char *src, size_t dstsize)
 // int	main(void)
 // {
 // 	char src[] = "world";
-// 	char dst[20] = "hello, ";
+// 	char dst[50] = "hello, ";
 // 	printf ("return = %zu , src = %s, dst = %s\n", 
-					//ft_strlcat(dst,src,17),src,dst);
+// 					ft_strlcat(dst,src,17),src,dst);
 // 	char src1[] = "world";
-// 	char dst1[20] = "hello, ";
+// 	char dst1[50] = "hello, ";
 // 	printf ("\nreturn = %zu , src = %s, dst = %s", 
-					//strlcat(dst1,src1,17),src,dst);
+// 					strlcat(dst1,src1,17),src,dst);
 // 	return (0);
 // }
