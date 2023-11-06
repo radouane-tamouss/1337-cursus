@@ -1,41 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 16:19:14 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/06 18:22:22 by rtamouss         ###   ########.fr       */
+/*   Created: 2023/11/06 17:19:16 by rtamouss          #+#    #+#             */
+/*   Updated: 2023/11/06 18:05:22 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1,const char *s2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	unsigned int	i;
+	char			*str;
 
 	i = 0;
-	if (n <= 0)
-		return (0);
-	while (i < n && (s1[i] || s2[i]))
+	str = (char *)malloc(len + 1);
+	if (s == NULL || start >= ft_strlen(s))
+		return (NULL);
+	if (!str)
+		return (NULL);
+	while (s[start] && i < len)
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		str[i] = s[start];
 		i++;
+		start++;
 	}
-	return (0);
+	str[i] = '\0';
+	return (str);
 }
 
 // #include <stdio.h>
-// #include <stdlib.h>
-// #include <string.h>
+
 // int	main(void)
 // {
-// 	char *s1 = "hello world";
-// 	char *s2 = "hello world";
-// 	printf("%d", ft_strncmp(s1,s2,20));
-// 	printf("\n%d\n", strncmp(s1,s2,20));
+// 	char *s = "hello world test please";
+// 	char *sub;
+// 	sub = ft_substr(s,6,7);
+// 	printf("%s",sub);
 // 	return (0);
 // }

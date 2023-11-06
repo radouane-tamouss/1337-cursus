@@ -6,35 +6,38 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:42:55 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/05 15:46:12 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:22:42 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-	size_t	srclen;
-	size_t	dstlen;
+	size_t	j;
+	size_t	slen;
+	size_t	dlen;
 
-	dstlen = ft_strlen(dst);
-	srclen = ft_strlen(src);
 	i = 0;
-	if (dstlen >= dstsize)
-		return (srclen + dstsize);
-	while (src[i] && i < dstsize - dstlen - 1)
+	j = 0;
+	slen = ft_strlen(src);
+	if (dstsize == 0)
+		return (slen);
+	dlen = ft_strlen(dst);
+	if (dstsize <= dlen)
+		return (slen + dstsize);
+	while (src[i] && i < (dstsize - dlen - 1))
 	{
-		dst[dstlen + i] = src[i];
+		dst[dlen + i] = src[i];
 		i++;
 	}
-	dst[dstlen + i] = '\0';
-	return (srclen + dstlen);
+	dst[dlen + i] = '\0';
+	return (dlen + slen);
 }
 
 // #include <stdio.h>
 // #include <string.h>
-
 // int	main(void)
 // {
 // 	char src[] = "world";

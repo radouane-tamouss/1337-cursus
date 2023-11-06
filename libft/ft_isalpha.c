@@ -6,9 +6,11 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 16:06:50 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/01 16:44:24 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/06 18:10:23 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
