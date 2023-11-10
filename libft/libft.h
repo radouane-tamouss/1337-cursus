@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 17:52:19 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/07 14:59:02 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:34:37 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-char **ft_split(char const *s, char c);
+char 	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
 
 #endif
