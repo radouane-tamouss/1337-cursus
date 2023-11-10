@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 17:52:19 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/10 16:34:37 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/10 19:15:10 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 char 	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
+char	*ft_strtrim(char const *s1, char const *set);
 
 #endif
