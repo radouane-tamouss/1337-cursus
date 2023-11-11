@@ -6,37 +6,39 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:58:04 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/07 18:43:40 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/12 00:20:56 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_is_sep(char c, char sep)
+static int	ft_is_sep(char c, char sep)
 {
-    return (c == sep);
+	return (c == sep);
 }
 
-static int ft_count_words(char const *str, char sep)
+static int	ft_count_words(char const *str, char sep)
 {
-    int count = 0;
-    int i = 0;
+	int	count;
+	int	i;
 
-    while (str[i])
-    {
-        while (str[i] && ft_is_sep(str[i], sep))
-            i++;
-        if (str[i] && !ft_is_sep(str[i], sep))
-        {
-            count++;
-            while (str[i] && !ft_is_sep(str[i], sep))
-                i++;
-        }
-    }
-    return (count);
+	count = 0;
+	i = 0;
+	while (str[i])
+	{
+		while (str[i] && ft_is_sep(str[i], sep))
+			i++;
+		if (str[i] && !ft_is_sep(str[i], sep))
+		{
+			count++;
+			while (str[i] && !ft_is_sep(str[i], sep))
+				i++;
+		}
+	}
+	return (count);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**res;
 	int		i;
@@ -70,7 +72,6 @@ char **ft_split(char const *s, char c)
 	res[j] = NULL;
 	return (res);
 }
-
 
 // #include <stdio.h>
 // int	 main(void)
