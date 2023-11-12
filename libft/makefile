@@ -1,6 +1,5 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-# F := strlen
 SRCS = ft_atoi.c    ft_isalnum.c ft_isdigit.c ft_memcmp.c  ft_strchr.c  ft_strlcat.c ft_strncmp.c ft_substr.c \
 ft_bzero.c   ft_isalpha.c ft_isprint.c ft_memcpy.c  ft_strdup.c  ft_strlcpy.c ft_strnstr.c ft_tolower.c \
 ft_calloc.c  ft_isascii.c ft_memchr.c  ft_memset.c  ft_strjoin.c ft_strlen.c  ft_strrchr.c ft_toupper.c ft_split.c ft_itoa.c \
@@ -11,7 +10,7 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	ar rcs $@ $^
 
 
 %.o : %.c
@@ -26,7 +25,7 @@ fclean : clean
 re: fclean all
 
 push:
-	cd ..
-	git add .
-	git commit -m 'push o ssf'
+	cd .. && \
+	git add . && \
+	git commit -m 'push o ssf' && \
 	git push
