@@ -5,7 +5,7 @@ ft_bzero.c   ft_isalpha.c ft_isprint.c ft_memcpy.c  ft_strdup.c  ft_strlcpy.c ft
 ft_calloc.c  ft_isascii.c ft_memchr.c  ft_memset.c  ft_strjoin.c ft_strlen.c  ft_strrchr.c ft_toupper.c ft_split.c ft_itoa.c \
 ft_strtrim.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c ft_strmapi.c ft_memmove.c
 
-BSRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c
+BSRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
 
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRCS:.c=.o)
