@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 18:30:48 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/13 23:00:42 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/14 16:49:43 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_atoi(const char *str)
 {
 	int		i;
 	int		sign;
-	int		res;
+	long	res;
 
 	i = 0;
 	res = 0;
