@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/14 16:55:41 by rtamouss          #+#    #+#              #
+#    Updated: 2023/11/14 16:56:47 by rtamouss         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRCS = ft_atoi.c    ft_isalnum.c ft_isdigit.c ft_memcmp.c  ft_strchr.c  ft_strlcat.c ft_strncmp.c ft_substr.c \
@@ -8,7 +20,7 @@ ft_strtrim.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_pute
 BSRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 OBJS = $(SRCS:.c=.o)
-BOBJS = $(BSRCS:.c=.o)
+BOBJS = ${OBJS} $(BSRCS:.c=.o)
 NAME = libft.a
 
 all: $(NAME)
