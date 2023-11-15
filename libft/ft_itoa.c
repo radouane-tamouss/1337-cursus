@@ -6,13 +6,11 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 23:17:55 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/10 16:47:38 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/15 01:56:03 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 int	count_digits(int n)
 {
@@ -60,12 +58,3 @@ char	*ft_itoa(int n)
 	}
 	return (s);
 }
-// int main(void)
-// {
-// 	int n = -202;
-// 	char *s = ft_itoa(n);
-// 	printf("%s\n",s);
-// 	printf("%d\n",count_digits(n));
-
-// 	return (0);
-// }
