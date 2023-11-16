@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:42:55 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/06 20:22:42 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/16 17:37:52 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,10 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-	size_t	j;
 	size_t	slen;
 	size_t	dlen;
 
 	i = 0;
-	j = 0;
 	slen = ft_strlen(src);
 	if (dstsize == 0)
 		return (slen);
@@ -36,17 +34,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (dlen + slen);
 }
 
-// #include <stdio.h>
 // #include <string.h>
-// int	main(void)
+// int main()
 // {
-// 	char src[] = "world";
-// 	char dst[50] = "hello, ";
-// 	printf ("return = %zu , src = %s, dst = %s\n", 
-// 					ft_strlcat(dst,src,17),src,dst);
-// 	char src1[] = "world";
-// 	char dst1[50] = "hello, ";
-// 	printf ("\nreturn = %zu , src = %s, dst = %s", 
-// 					strlcat(dst1,src1,17),src,dst);
+// 	char *s = "hello";
+// 	char d[15] = "hello world ";
+// 	int res = ft_strlcat(d,s,15);
+// 	char *s1 = "hello";
+// 	printf("returned : %d\nsrc ; %s\ndst : %s\n",res, s, d);
+// 	char d1[] = "hello world ";
+// 	int res1 = strlcat(d1,s1,15);
+// 	printf("returned : %d\nsrc ; %s\ndst : %s\n",res1, s1, d1);
 // 	return (0);
 // }

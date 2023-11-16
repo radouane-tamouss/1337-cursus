@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 15:16:59 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/05 16:04:15 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/16 17:54:12 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ char	*ft_strrchr(const char *s, int c)
 // #include <string.h>
 // int		main(void)
 // {
-// 	char *s = "helloe";
-// 	char *k = "helloe";
+// 	char *s = "helloecc";
+// 	char *k = "helloecc";
 // 	printf("located pointer : %p\nvalue : %s\n", ft_strrchr(s,'e')
-//,ft_strrchr(s,'e'));
+// ,ft_strrchr(s,'e'));
 // 	printf("located pointer : %p\nvalue : %s\n", strrchr(k,'e'),strrchr(k,'e'));
 // 	return (0);
 // }

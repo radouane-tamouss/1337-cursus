@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:01:32 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/12 00:18:49 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/16 15:49:02 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (len);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-
-// int main(void)
-// {
-// 	char src[] = "hello world";
-// 	char dst[] = "hello";
-
-// 	printf("len = %zu , dst = %s, src = %s", ft_strlcpy(dst,src,0), dst, src);
-// 	printf("\nlen = %zu , dst = %s, src = %s", strlcpy(dst,src,0), dst, src);
-// 	return (0);
-// }

@@ -6,13 +6,13 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 23:17:55 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/15 01:56:03 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/16 23:36:06 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_digits(int n)
+static int	count_digits(long n)
 {
 	int	count;
 

@@ -6,13 +6,13 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:31:14 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/05 14:32:30 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/16 23:15:57 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *s1)
+char	*ft_strdup(const char *s1)
 {
 	size_t	len;
 	size_t	i;
@@ -34,10 +34,10 @@ char	*ft_strdup(char *s1)
 
 // #include <stdio.h>
 // #include <string.h>
-
 // int	main(void)
 // {
-// 	char *test = "hello world";	
-// 	printf("%s", ft_strdup(test));
+// 	char *test = "whhat ?  ";	
+// 	printf("%s\n", ft_strdup(test));
+// 	printf("%s", strdup(test));
 // 	return 0;	
 // }

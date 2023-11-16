@@ -6,7 +6,7 @@
 #    By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 21:37:56 by rtamouss          #+#    #+#              #
-#    Updated: 2023/11/16 00:53:22 by rtamouss         ###   ########.fr        #
+#    Updated: 2023/11/16 16:39:02 by rtamouss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,12 +29,15 @@ all: $(NAME)
 $(NAME) : $(OBJS)
 	ar rcs $@ $^
 
+bonus: $(OBJS) ${BOBJS}
 
-%.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJS) : $(SRCS)
+	$(CC) $(CFLAGS) -c $^
 
-bonus: ${BOBJS}
-	ar rcs $(NAME)  ${BOBJS}
+$(BOBJS) : $(BSRCS)
+	$(CC) $(CFLAGS) -c $^
+	ar rcs $(NAME) $(BOBJS)
+
 clean:
 	rm -rf $(OBJS)
 	rm -rf $(BOBJS)
@@ -43,6 +46,7 @@ fclean : clean
 	rm -rf $(NAME)
 
 re: fclean all
+
 
 .PHONY : all bonus clean fclean re
 

@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 22:26:13 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/12 23:56:54 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/16 22:15:10 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,18 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	ptr[i] = '\0';
 	return (ptr);
 }
+
+// char f(unsigned int index, char c)
+// {
+// 	if (index % 2 == 0)
+// 		c = '0';
+// 	return (c);
+// }
+
+// int 	main(void)
+// {
+// 	char *s = "hello world ";
+// 	char *ptr = ft_strmapi(s, &f);
+// 	printf("%s", ptr);
+// 	return (0);
+// }

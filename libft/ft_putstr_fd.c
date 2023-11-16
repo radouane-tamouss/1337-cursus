@@ -6,13 +6,11 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 00:49:26 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/12 23:55:33 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/17 00:48:32 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <fcntl.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {

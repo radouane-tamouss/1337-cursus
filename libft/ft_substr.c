@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:19:16 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/12 18:10:05 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/16 18:37:18 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-// #include <stdio.h>
-
 // int	main(void)
 // {
-// 	char *s = "hello world test please";
+// 	char *s = "hello world this a atest";
 // 	char *sub;
-// 	sub = ft_substr(s,6,7);
+// 	sub = ft_substr(s,15,7);
 // 	printf("%s\n",sub);
 // 	return (0);
 // }

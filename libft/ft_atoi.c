@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 18:30:48 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/14 16:49:43 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/16 17:52:10 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,15 @@ int	ft_atoi(const char *str)
 	res *= sign;
 	return (res);
 }
+
+// int	main(void)
+// {
+// 	int b;
+// 	b = ft_atoi("     					      9789ddfgd798");
+// 	printf("%d\n",b);
+// 	printf("----------\n");
+// 	int b1;
+// 	b1 = atoi("     					      9789ddfgd798");
+// 	printf("%d\n",b1);
+// 	return (0);
+// }
