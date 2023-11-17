@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 18:43:24 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/16 18:20:18 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/17 15:23:37 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 // #include <string.h>
 // int	main(void)
 // {
-// 	char *needle = "world";
-// 	char *haystack = "hello this is world test hello";
-// 	printf("%s",ft_strnstr(haystack,needle,ft_strlen(haystack)));
-// 	printf("\n%s",strnstr(haystack,needle,ft_strlen(haystack)));
+// 	char *needle = "sss";
+// 	char *haystack = "sss";
+// 	printf("%s",ft_strnstr(haystack,needle, 5));
+// 	printf("\n%s",strnstr(haystack,needle,5));
 // 	return (0);
 // }

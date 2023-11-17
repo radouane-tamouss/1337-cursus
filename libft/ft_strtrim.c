@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 16:55:54 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/16 18:42:32 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:11:09 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int	main(void)
 // {
-// 	printf("|%s|",ft_strtrim("------Trim Me-----","--"));
+// 	printf("|%s|",ft_strtrim("-----trim-------------","--"));
 // 	return (0);
 // }

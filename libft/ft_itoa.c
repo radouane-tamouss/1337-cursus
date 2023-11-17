@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 23:17:55 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/16 23:36:06 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:19:05 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,10 @@ char	*ft_itoa(int n)
 	}
 	return (s);
 }
+
+// int main(void)
+// {
+// 	printf("%d\n",count_digits(21474836494));
+// 	printf("%s\n",ft_itoa(214748364));
+// 	return (0);
+// }

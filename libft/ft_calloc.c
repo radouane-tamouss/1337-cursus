@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:50:51 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/15 01:07:57 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:08:19 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	*ft_calloc(size_t count, size_t size)
 
 // #include <stdio.h>
 // #include <stdlib.h>
-
 // int	main(void)
 // {
 // 	if(ft_calloc(23,2)) printf("done\n"); else printf("hhh\n");

@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 21:37:56 by rtamouss          #+#    #+#              #
-#    Updated: 2023/11/16 16:39:02 by rtamouss         ###   ########.fr        #
+#    Updated: 2023/11/17 15:36:58 by rtamouss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,10 +49,3 @@ re: fclean all
 
 
 .PHONY : all bonus clean fclean re
-
-
-push:
-	cd .. && \
-	git add . && \
-	git commit -m 'push o ssf' && \
-	git push
