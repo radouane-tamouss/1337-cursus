@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 18:49:25 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/20 21:35:43 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/20 22:28:23 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ void	ft_putnbr_x(unsigned int nbr, char c)
 	char  	*base;
 	int count;
 	count = 0;
+	if (c == 'p')
+	{
+		write(1, "0x", 2);
+	}
 	if (c == 'x')
 		base = "0123456789abcdef";
 	else if (c == 'X')

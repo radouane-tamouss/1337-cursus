@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 12:00:33 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/20 21:37:21 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/20 22:27:22 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,19 @@ int format(va_list *args, const char format)
 		ft_putchar_fd('%', 1);
 		return (1);
 	}
+	else if (format == 'u')
+	{
+		ft_putnbr_x(va_arg(*args,unsigned int), 'u');
+		return (1);
+	}
+	else if (format == 'p')
+	{
+		unsigned long ptr = va_arg(*args, unsigned long);
+		if (ptr)
+			ft_putnbr_x(ptr, format);
+		write(1,"(nil)",5);
+		return (1);
+	}
 	else 
 		return (-1);
 }
@@ -83,7 +96,7 @@ int ft_printf(const char *s, ...)
 	va_start(args,s);
 	while (s[i])
 	{
-		if (s[i] == '%' && ft_strchr("%dcsuixX",s[ i + 1 ]) != NULL)
+		if (s[i] == '%' && ft_strchr("%dcsuixpX",s[ i + 1 ]) != NULL)
 		{
 			count += format(&args, s[i + 1]);
 			i++;
@@ -100,9 +113,9 @@ int ft_printf(const char *s, ...)
 
 int main(void)
 {
-	int nb = 0;
-	nb = ft_printf("hello world %d , %s, %c, %d, %d, %x, %X, %i , %%, %u\n", 92,"hello:", 'c', 380238202, 20923, 255, 2902, 234, 20839);
-	printf("hello world %d , %s, %c, %d, %d, %x, %X, %i , %% , %u\n", 92, "hello:", 'c', 380238202, 20923, 255, 2902, 234, 20839);
-	ft_printf("\n the numer returned is : %d", nb);
+	int nb4 = 34;
+	int *nb = &nb4;
+	ft_printf("hello world %d , %s, %c, %d, %d, %x, %X, %i , %% , %u, %p\n", 92,"hello:", 'c', 380238202, 20923, 255, 2902, 234, 20839, nb);
+	printf("hello world %d , %s, %c, %d, %d, %x, %X, %i , %% , %u, %p\n", 92, "hello:", 'c', 380238202, 20923, 255, 2902, 234, 20839, nb);
 	return (0);
 }
