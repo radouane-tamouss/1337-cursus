@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:57:31 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/19 15:26:49 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/20 20:51:49 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
 # include <stdarg.h>
 # include "../libft/libft.h"
 
+void	ft_putnbr_x(unsigned int nbr, char c);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 12:00:33 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/19 22:26:03 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/20 21:37:21 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <string.h>
 #include "ft_printf.h"
 #include <stdarg.h>
+
+
 static int	count_digits(long n)
 {
 	int	count;
@@ -34,26 +36,44 @@ static int	count_digits(long n)
 	return (count);
 }
 
-int ft_case(va_list args, const char format)
+int format(va_list *args, const char format)
 {
-	if(format == 'd')
+	if(format == 'd' || format == 'i')
 	{
-		int num = va_arg(args,int);
+		int num = va_arg(*args,int);
 		ft_putnbr_fd(num, 1);
 		return (count_digits(num));
 	}
 	else if(format == 's')
 	{
-		char *str = va_arg(args,char *);
+		char *str = va_arg(*args,char *);
 		ft_putstr_fd(str, 1);
 		return (ft_strlen(str));	
 	}
-	else
+	else if (format == 'c')
 	{
-		ft_putchar_fd(va_arg(args,int), 1);
-		return (1);	
+		ft_putchar_fd(va_arg(*args,int), 1);
+		return (1);
 	}
+	else if (format == 'x')
+	{
+		ft_putnbr_x(va_arg(*args,unsigned int), 'x');
+		return (1);
+	}
+	else if (format == 'X')
+	{
+		ft_putnbr_x(va_arg(*args,unsigned int), 'X');
+		return (1);
+	}
+	else if (format == '%')
+	{
+		ft_putchar_fd('%', 1);
+		return (1);
+	}
+	else 
+		return (-1);
 }
+
 
 int ft_printf(const char *s, ...)
 {
@@ -63,9 +83,9 @@ int ft_printf(const char *s, ...)
 	va_start(args,s);
 	while (s[i])
 	{
-		if (s[i] == '%' && ft_strchr("dcs",s[ i + 1 ]) != NULL)
+		if (s[i] == '%' && ft_strchr("%dcsuixX",s[ i + 1 ]) != NULL)
 		{
-			count += ft_case(args, s[i + 1]);
+			count += format(&args, s[i + 1]);
 			i++;
 		}
 		else
@@ -81,7 +101,8 @@ int ft_printf(const char *s, ...)
 int main(void)
 {
 	int nb = 0;
-	nb = ft_printf("hello world %d , %s, %c, %d, %d\n", 92, "hello", 'c', 380238202, 20923);
+	nb = ft_printf("hello world %d , %s, %c, %d, %d, %x, %X, %i , %%, %u\n", 92,"hello:", 'c', 380238202, 20923, 255, 2902, 234, 20839);
+	printf("hello world %d , %s, %c, %d, %d, %x, %X, %i , %% , %u\n", 92, "hello:", 'c', 380238202, 20923, 255, 2902, 234, 20839);
 	ft_printf("\n the numer returned is : %d", nb);
 	return (0);
 }

@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_x.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 16:06:36 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/20 13:15:14 by rtamouss         ###   ########.fr       */
+/*   Created: 2023/11/20 18:49:25 by rtamouss          #+#    #+#             */
+/*   Updated: 2023/11/20 21:35:43 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_putnbr_x(unsigned int nbr, char c)
 {
-	size_t			i;
-	unsigned char	*ptr;
-
-	ptr = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	char  	*base;
+	int count;
+	count = 0;
+	if (c == 'x')
+		base = "0123456789abcdef";
+	else if (c == 'X')
+		base = "0123456789ABCDEF";
+	else if (c == 'u')
+		base = "0123456789";
+	if (nbr < 16)
 	{
-		if (ptr[i] == (unsigned char)c)
-			return ((void *)(ptr + i));
-		i++;
+		write(1, &base[nbr], 1);
 	}
-	return (NULL);
+	else
+	{
+		ft_putnbr_x(nbr / ft_strlen(base), c);
+		ft_putnbr_x((nbr % ft_strlen(base)), c);
+	}
 }
