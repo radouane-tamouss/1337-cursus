@@ -1,23 +1,31 @@
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = ft_printf
-SRC = main.c ft_putnbr_x.c
-OBJ = $(SRC:.c=.o)
 LIBFT = ../libft
+LIBFT_LIB = $(LIBFT)/libft.a
+SRC = main.c ft_putnbr_x.c
 INCLUDES = -I$(LIBFT)
+OBJ = $(SRC:.c=.o)
 
-all: $(NAME)
+all : $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+$(LIBFT_LIB):
+	make -C $(LIBFT)
+
+$(NAME) : $(OBJ) $(LIBFT_LIB)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -L$(LIBFT) -lft
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-clean:
-	rm -f $(OBJ)
+clean: 
+	rm -rf $(OBJ)
+	make -C $(LIBFT) clean
 
-fclean: clean
-	rm -f $(NAME)
+fclean : clean
+	rm -rf $(NAME)
+	make -C $(LIBFT) fclean
 
-re: fclean all
+re : fclean all
+
+.PHONY : all clean fclean re

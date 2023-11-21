@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 12:00:33 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/20 22:27:22 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/21 10:29:56 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,57 @@ static int	count_digits(long n)
 	}
 	return (count);
 }
+void	ft_putnbr_x(unsigned long long int nbr, char c)
+{
+	char  	*base;
+	int count;
+	count = 0;
+	if (c == 'x')
+		base = "0123456789abcdef";
+	else if (c == 'X')
+		base = "0123456789ABCDEF";
+	else if (c == 'u')
+		base = "0123456789";
+	if (nbr < 16)
+	{
+		write(1, &base[nbr], 1);
+	}
+	else
+	{
+		ft_putnbr_x(nbr / ft_strlen(base), c);
+		ft_putnbr_x((nbr % ft_strlen(base)), c);
+	}
+}
+
+// void ft_putnbr_x(unsigned long long nbr, char c)
+// {
+//     char *base;
+//     if (c == 'x')
+//         base = "0123456789abcdef";
+//     else if (c == 'X')
+//         base = "0123456789ABCDEF";
+//     else if (c == 'u')
+//         base = "0123456789";
+
+//     char buffer[50]; // Buffer to hold the result
+//     int i = 0;
+
+//     // Handle 0 explicitly to simplify the rest of the code
+//     if (nbr == 0) {
+//         write(1, &base[0], 1);
+//         return;
+//     }
+
+//     // Convert nbr to the specified base
+//     while (nbr != 0) {
+//         buffer[i++] = base[nbr % ft_strlen(base)];
+//         nbr /= ft_strlen(base);
+//     }
+
+//     // The result is in buffer in reverse order, so print it backwards
+//     while (--i >= 0)
+//         write(1, &buffer[i], 1);
+// }
 
 int format(va_list *args, const char format)
 {
@@ -76,11 +127,17 @@ int format(va_list *args, const char format)
 		return (1);
 	}
 	else if (format == 'p')
-	{
-		unsigned long ptr = va_arg(*args, unsigned long);
-		if (ptr)
-			ft_putnbr_x(ptr, format);
-		write(1,"(nil)",5);
+    {
+		void* ptr = va_arg(*args, void*);
+		if (ptr == NULL)
+		{
+			write(1, "(nil)", 5);
+		}
+		else
+		{
+			write(1, "0x", 2); // Prefix for hexadecimal numbers
+			ft_putnbr_x((unsigned long long)ptr, 'x'); // Print the pointer value as a 64-bit hexadecimal number
+		}
 		return (1);
 	}
 	else 
