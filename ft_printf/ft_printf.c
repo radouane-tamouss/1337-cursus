@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 12:00:33 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/22 16:17:23 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/22 17:32:44 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,28 +68,14 @@
 //     while (--i >= 0)
 //         write(1, &buffer[i], 1);
 // }
-
-int	format(va_list *args, const char format)
+static int	format2(va_list *args, const char format)
 {
-	char	*str;
 	void	*ptr;
 
-	if (format == 'd' || format == 'i')
-		return (ft_putnbr_fd(va_arg(*args, int), 1));
-	else if (format == 's')
-	{
-		str = va_arg(*args, char *);
-		if (str == NULL)
-			return (ft_putstr_fd("(null)", 1));
-		else
-			return (ft_putstr_fd(str, 1));
-	}
-	else if (format == 'c')
+	if (format == 'c')
 		return (ft_putchar_fd(va_arg(*args, int), 1));
-	else if (format == 'x')
-		return (ft_putnbr_x(va_arg(*args, unsigned int), 'x'));
-	else if (format == 'X')
-		return (ft_putnbr_x(va_arg(*args, unsigned int), 'X'));
+	else if (format == 'x' || format == 'X')
+		return (ft_putnbr_x(va_arg(*args, unsigned int), format));
 	else if (format == '%')
 		return (ft_putchar_fd('%', 1));
 	else if (format == 'u')
@@ -107,10 +93,26 @@ int	format(va_list *args, const char format)
 			write(1, "0x", 2);
 			return (2 + ft_putnbr_x((unsigned long long)ptr, 'x'));
 		}
-		return (0);
+	}
+	return (0);
+}
+
+static int	format(va_list *args, const char format)
+{
+	char	*str;
+
+	if (format == 'd' || format == 'i')
+		return (ft_putnbr_fd(va_arg(*args, int), 1));
+	else if (format == 's')
+	{
+		str = va_arg(*args, char *);
+		if (str == NULL)
+			return (ft_putstr_fd("(null)", 1));
+		else
+			return (ft_putstr_fd(str, 1));
 	}
 	else
-		return (0);
+		return (format2(args, format));
 }
 
 int	ft_printf(const char *s, ...)
