@@ -6,15 +6,21 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:13:57 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/22 21:33:21 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/22 22:53:27 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <assert.h>
 #include <stdio.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <limits.h>
 
-int	main(void)
+#include "ft_printf.h"
+
+int main(void)
 {
-	return (0);
+	int d = ft_printf(NULL);
+	int d2 = printf(NULL);
+	printf("%d %d");
+    return 0;
 }

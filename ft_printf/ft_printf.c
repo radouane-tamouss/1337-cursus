@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 12:00:33 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/22 21:07:11 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/22 22:16:44 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ int	ft_printf(const char *s, ...)
 	i = 0;
 	count = 0;
 	if (!s)
-		return (0);
+		return (-1);
 	va_start(args, s);
 	while (s[i])
 	{
