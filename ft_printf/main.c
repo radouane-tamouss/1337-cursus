@@ -6,16 +6,15 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:13:57 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/22 16:14:26 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/22 21:33:21 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <assert.h>
 #include <stdio.h>
 
 int	main(void)
 {
-	printf("count : %d \n", ft_printf("\001\002\007\v\010\f\r\n"));
-	printf("count : %d \n", printf("\001\002\007\v\010\f\r\n"));
 	return (0);
 }
