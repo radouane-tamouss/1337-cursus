@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_x.c                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 18:49:25 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/22 16:12:04 by rtamouss         ###   ########.fr       */
+/*   Created: 2023/11/01 17:44:31 by rtamouss          #+#    #+#             */
+/*   Updated: 2023/11/21 19:16:29 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_x(unsigned long long nbr, char c)
+size_t	ft_strlen(const char *s)
 {
-	char	*base;
-	int		count;
+	size_t	i;
 
-	count = 0;
-	if (c == 'x')
-		base = "0123456789abcdef";
-	else if (c == 'X')
-		base = "0123456789ABCDEF";
-	else if (c == 'u')
-		base = "0123456789";
-	if (nbr < ft_strlen(base))
-	{
-		count++;
-		write(1, &base[nbr], 1);
-	}
-	else
-	{
-		count += ft_putnbr_x(nbr / ft_strlen(base), c);
-		count += ft_putnbr_x((nbr % ft_strlen(base)), c);
-	}
-	return (count);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_x.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 18:49:25 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/22 16:12:04 by rtamouss         ###   ########.fr       */
+/*   Created: 2023/11/11 20:40:35 by rtamouss          #+#    #+#             */
+/*   Updated: 2023/11/22 16:14:47 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "fcntl.h"
 #include "ft_printf.h"
 
-int	ft_putnbr_x(unsigned long long nbr, char c)
+int	ft_putnbr_fd(int n, int fd)
 {
-	char	*base;
+	long	nbr;
 	int		count;
 
+	nbr = n;
 	count = 0;
-	if (c == 'x')
-		base = "0123456789abcdef";
-	else if (c == 'X')
-		base = "0123456789ABCDEF";
-	else if (c == 'u')
-		base = "0123456789";
-	if (nbr < ft_strlen(base))
+	if (nbr < 0)
 	{
 		count++;
-		write(1, &base[nbr], 1);
+		ft_putchar_fd('-', fd);
+		nbr = -nbr;
 	}
+	if (nbr < 10)
+		count += ft_putchar_fd(nbr + '0', fd);
 	else
 	{
-		count += ft_putnbr_x(nbr / ft_strlen(base), c);
-		count += ft_putnbr_x((nbr % ft_strlen(base)), c);
+		count += ft_putnbr_fd(nbr / 10, fd);
+		count += ft_putchar_fd((nbr % 10) + '0', fd);
 	}
 	return (count);
 }
