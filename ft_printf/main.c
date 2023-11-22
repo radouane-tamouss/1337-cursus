@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:13:57 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/22 22:54:38 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/22 22:55:21 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 int main(void)
 {
 	int d = ft_printf(NULL);
-	int d2 = printf(NULL);
+	// int d2 = printf(NULL);
+	int d2 = 0;
 	printf("%d %d", d, d2);
     return 0;
 }
