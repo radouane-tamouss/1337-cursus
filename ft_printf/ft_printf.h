@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:57:31 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/22 17:37:45 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/23 11:38:54 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <unistd.h>
 
 int		ft_putnbr_x(unsigned long long nbr, char c);
-int		ft_isprint(int c);
 int		ft_putchar_fd(char c, int fd);
 int		ft_putnbr_fd(int n, int fd);
 int		ft_putstr_fd(char *s, int fd);
