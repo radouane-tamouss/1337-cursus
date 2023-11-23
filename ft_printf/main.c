@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 19:20:57 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/23 19:20:58 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/23 19:43:42 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	main(void)
 {
-	ft_printf("%d %s %i %x %s %p\n", 24, "hello wolrd", 23, 231, "he", 290);
-	ft_printf("%d %s %i %x %s %p\n", 24, "hello wolrd", 23, 231, "he", 290);
+	int d1 = ft_printf("%d %s %i %x %s %p %% %u %p\n", NULL, NULL, NULL, NULL, "he", NULL, -5, 14546543);
+	int d2 = printf("%d %s %i %x %s %p %% %u %p\n", NULL, NULL, NULL, NULL, "he", NULL, -5,14546543);
+	printf("%d --- %d", d1, d2);
 	return (0);
 }
