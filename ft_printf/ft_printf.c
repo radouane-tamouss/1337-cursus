@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 12:00:33 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/23 19:17:42 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/25 10:41:52 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,16 +67,16 @@ int	ft_printf(const char *s, ...)
 
 	i = 0;
 	count = 0;
-	if (!s)
-		return (-1);
 	va_start(args, s);
 	while (s[i])
 	{
-		if (s[i] == '%' && ft_strchr("%dcsuixpX", s[i + 1]) != NULL)
+		if (s[i] == '%' && s[i + 1] && ft_strchr("%dcsuixpX", s[i + 1]) != NULL)
 		{
 			count += format(args, s[i + 1]);
 			i++;
 		}
+		else if (s[i] == '%' && s[i + 1] == '\0')
+			break ;
 		else
 		{
 			ft_putchar_fd(s[i], 1);
