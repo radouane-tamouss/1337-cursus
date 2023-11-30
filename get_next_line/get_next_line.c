@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 12:09:56 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/29 23:48:28 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:00:58 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,27 +46,30 @@ char	*ft_line(char *buffer)
 	return (line);
 }
 
-char	*ft_next(char *buffer)
+char	*ft_next(char *str)
 {
+	char	*temp;
 	int		i;
 	int		j;
-	char	*line;
 
 	i = 0;
-	while (buffer[i] && buffer[i] != '\n')
-		i++;
-	if (!buffer[i])
-	{
-		free(buffer);
-		return (NULL);
-	}
-	line = ft_calloc(ft_strlen(buffer) - i + 1, sizeof(char));
-	i++;
 	j = 0;
-	while (buffer[i])
-		line[j++] = buffer[i++];
-	free(buffer);
-	return (line);
+	while (str[i] && str[i] != '\n')
+		i++;
+	if (!str[i])
+	{
+		free(str);
+		return (0);
+	}
+	temp = (char *)malloc(sizeof(char) * ((ft_strlen(str) - i) + 1));
+	if (!temp)
+		return (0);
+	i++;
+	while (str[i])
+		temp[j++] = str[i++];
+	temp[j] = '\0';
+	free(str);
+	return (temp);
 }
 
 char	*read_file(int fd, char *result)
@@ -74,20 +77,25 @@ char	*read_file(int fd, char *result)
 	char	*buffer;
 	int		bytesread;
 
+	bytesread = 1;
 	if (!result)
 		result = ft_calloc(1, 1);
-	bytesread = 1;
-	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
-	while (!ft_strchr(buffer, '\n') && bytesread > 0)
+	buffer = malloc(BUFFER_SIZE + 1);
+	if (!buffer)
+		return (NULL);
+	while (bytesread > 0)
 	{
 		bytesread = read(fd, buffer, BUFFER_SIZE);
 		if (bytesread == -1)
 		{
 			free(buffer);
+			free(result);
 			return (NULL);
 		}
 		buffer[bytesread] = 0;
 		result = ft_free(result, buffer);
+		if (ft_strchr(buffer, '\n'))
+			break ;
 	}
 	free(buffer);
 	return (result);
@@ -98,11 +106,13 @@ char	*get_next_line(int fd)
 	static char	*buffer;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buffer = read_file(fd, buffer);
 	if (!buffer)
+	{
 		return (NULL);
+	}
 	line = ft_line(buffer);
 	buffer = ft_next(buffer);
 	return (line);

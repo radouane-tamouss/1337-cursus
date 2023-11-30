@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 12:09:58 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/29 23:50:03 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/30 14:12:44 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <limits.h>
 # include <unistd.h>
 
 size_t	ft_strlen(const char *theString);

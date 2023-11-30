@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 12:09:44 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/11/29 23:38:37 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/11/30 14:52:00 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,21 +50,32 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (res);
 }
 
-void	*ft_calloc(size_t num, size_t size)
+void	ft_bzero(void *s, size_t n)
 {
-	char	*ptr;
 	size_t	i;
+	char	*d;
 
-	ptr = malloc(num * size);
-	if (!ptr)
-		return (NULL);
 	i = 0;
-	while (i < num * size)
+	d = (char *)s;
+	while (i < n)
 	{
-		ptr[i] = 0;
+		*d++ = '\0';
 		i++;
 	}
-	return (ptr);
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*tab;
+
+	tab = NULL;
+	if (size && count > UINT_MAX / size)
+		return (tab);
+	tab = malloc(count * size);
+	if (!tab)
+		return (NULL);
+	ft_bzero(tab, count * size);
+	return (tab);
 }
 
 char	*ft_strchr(const char *string, int searchedChar)
