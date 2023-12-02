@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 12:09:56 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/12/02 01:48:43 by rtamouss         ###   ########.fr       */
+/*   Created: 2023/12/02 01:35:18 by rtamouss          #+#    #+#             */
+/*   Updated: 2023/12/02 01:49:44 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_get_line(char *buffer)
 {
@@ -106,15 +106,15 @@ char	*read_file(int fd, char *result)
 
 char	*get_next_line(int fd)
 {
-	static char	*stock;
+	static char	*stock[OPEN_MAX];
 	char		*line;
 
 	if (fd < 0 || fd > OPEN_MAX|| BUFFER_SIZE <= 0)
 		return (NULL);
-	stock = read_file(fd, stock);
-	if (!stock)
+	stock[fd] = read_file(fd, stock[fd]);
+	if (!stock[fd])
 		return (NULL);
-	line = ft_get_line(stock);
-	stock = ft_rest(stock);
+	line = ft_get_line(stock[fd]);
+	stock[fd] = ft_rest(stock[fd]);
 	return (line);
 }

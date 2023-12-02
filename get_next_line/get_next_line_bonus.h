@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 12:09:58 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/12/02 01:49:08 by rtamouss         ###   ########.fr       */
+/*   Created: 2023/12/02 01:40:15 by rtamouss          #+#    #+#             */
+/*   Updated: 2023/12/02 01:49:26 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,4 @@ char	*ft_rest(char *buffer);
 char	*read_file(int fd, char *result);
 char	*get_next_line(int fd);
 
-#endif // GET_NEXT_LINE_H
+# endif
