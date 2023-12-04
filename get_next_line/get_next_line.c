@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 12:09:56 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/12/04 09:54:34 by mac              ###   ########.fr       */
+/*   Updated: 2023/12/04 12:13:12 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ char	*get_next_line(int fd)
 	static char	*stock;
 	char		*line;
 
-	if (fd < 0 || fd > OPEN_MAX|| BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT_MAX)
 		return (NULL);
 	stock = read_file(fd, stock);
 	if (!stock)

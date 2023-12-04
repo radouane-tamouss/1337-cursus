@@ -3,10 +3,7 @@
 
 int main(int ac, char **av)
 {
-    int fd = open("example.txt", O_RDONLY);
-    char *str = get_next_line(fd);
-        printf("%s", str);
-        free(str);
+    printf("%s", get_next_line(1));
     return (0);
 
 }
