@@ -6,7 +6,7 @@
 /*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 01:35:18 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/12/02 01:49:44 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/12/05 00:39:25 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ char	*get_next_line(int fd)
 	static char	*stock[OPEN_MAX];
 	char		*line;
 
-	if (fd < 0 || fd > OPEN_MAX|| BUFFER_SIZE <= 0)
+	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE <= 0)
 		return (NULL);
 	stock[fd] = read_file(fd, stock[fd]);
 	if (!stock[fd])

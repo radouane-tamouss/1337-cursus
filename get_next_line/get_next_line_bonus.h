@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 01:40:15 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/12/04 10:11:12 by mac              ###   ########.fr       */
+/*   Updated: 2023/12/05 00:39:56 by rtamouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 10
 # endif
 
 # include <fcntl.h>
+# include <limits.h>
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <limits.h>
 # include <unistd.h>
 
 size_t	ft_strlen(const char *theString);
@@ -33,4 +33,4 @@ char	*ft_rest(char *buffer);
 char	*read_file(int fd, char *result);
 char	*get_next_line(int fd);
 
-# endif
+#endif
