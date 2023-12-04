@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 12:09:56 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/12/02 01:48:43 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/12/04 09:54:34 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,8 @@ char	*read_file(int fd, char *result)
 		if (ft_strchr(buffer, '\n'))
 			break ;
 	}
-	return (free(buffer), result);
+	free(buffer);
+	return (result);
 }
 
 char	*get_next_line(int fd)
@@ -109,7 +110,7 @@ char	*get_next_line(int fd)
 	static char	*stock;
 	char		*line;
 
-	if (fd < 0 || fd > OPEN_MAX|| BUFFER_SIZE <= 0)
+	if (fd < 0 || fd > OPEN_MAX|| BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT_MAX)
 		return (NULL);
 	stock = read_file(fd, stock);
 	if (!stock)

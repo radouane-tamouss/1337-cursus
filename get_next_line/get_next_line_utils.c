@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtamouss <rtamouss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 12:09:44 by rtamouss          #+#    #+#             */
-/*   Updated: 2023/12/01 23:57:14 by rtamouss         ###   ########.fr       */
+/*   Updated: 2023/12/04 09:51:58 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*tab;
 
 	tab = NULL;
-	if (size && count > UINT_MAX / size)
+	if (count == 0 || size == 0 || count > SIZE_MAX / size)
 		return (tab);
 	tab = malloc(count * size);
 	if (!tab)
